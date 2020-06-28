@@ -15,29 +15,28 @@ public class MainHomeTask3 {
         Lion lion = new Lion();
         Lemur lemur = new Lemur();
         Giraffe giraffe = new Giraffe();
-        CarniAviary aviary = new CarniAviary(5);
-        aviary.addAnimal(lemur);
-        aviary.addAnimal(new Lion());
-        aviary.addAnimal(new Lion());
-        aviary.addAnimal(new Lion());
-        aviary.addAnimal(new Lion());
-        aviary.addAnimal(new Lion());
-        aviary.addAnimal(new Lion());
-        System.out.println("\n--------------------\n");
-        HerbAviary herbAviary = new HerbAviary(4);
-        herbAviary.addAnimal(new Lion());
+        HerbAviary herbAviary = new HerbAviary(0);
+        herbAviary.addAnimal(lemur);
+        herbAviary.addAnimal(giraffe);
+        herbAviary.addAnimal(lemur);
         herbAviary.addAnimal(new Giraffe());
         herbAviary.addAnimal(new Lemur());
         herbAviary.addAnimal(new Lemur());
         herbAviary.addAnimal(new Lemur());
-        herbAviary.addAnimal(new Lemur());
-        herbAviary.addAnimal(new Lemur());
+        System.out.println("\n--------------------\n");
 
-       Food meat = new Meat();
-        giraffe.getSatiety();
-        giraffe.eat(meat);
+        CarniAviary carniAviary = new CarniAviary(3);
+        carniAviary.addAnimal(new Lion());
+        carniAviary.addAnimal(new Lion());
+        carniAviary.addAnimal(new Tiger());
+        carniAviary.addAnimal(new Lion());
+        carniAviary.addAnimal(new Lemur());
 
-        lion.getSatiety();
-        lion.eat(meat);
+        CarniAviary carniAviary1 = new CarniAviary(1);
+        carniAviary1.addAnimal(new Lemur());
+        carniAviary1.addAnimal(new Lion());
+
+
+
     }
 }

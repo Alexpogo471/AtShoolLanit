@@ -8,12 +8,14 @@ import java.util.List;
 
 public class HerbAviary extends Aviary {
 
-    private int size = 0;
-    private List<Herbivore> herbivoreList = new ArrayList<>();
+    private int size;
+    private final List<Herbivore> herbivoreList = new ArrayList<>();
 
     public HerbAviary(int size) {
+        if (1 <= size) {
             this.size = size;
-        System.out.println("Размер вольера: "+ size);
+            System.out.println("Размер вольера: "+ size);
+        } else System.out.println("Вольер должен вмещать >= 1 животного");
     }
 
 
