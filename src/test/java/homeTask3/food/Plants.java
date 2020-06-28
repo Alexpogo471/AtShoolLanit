@@ -1,8 +1,5 @@
 package homeTask3.food;
 
-public class Plants extends Food {
-    @Override
-    public void eat() {
-        // TODO: 26.06.2020 need implements
-    }
+public interface Plants extends Food {
+
 }

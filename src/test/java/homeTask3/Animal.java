@@ -1,4 +1,8 @@
 package homeTask3;
 
-public abstract class Animal {
+import homeTask3.food.Food;
+
+public abstract class Animal extends Food {
+
+
 }
