@@ -17,12 +17,16 @@ public class CarniAviary extends Aviary {
     }
 
 
-    public void addAnimal(Carnivorous carnivorous) {
-        if (counter>=size){
-            System.out.println("В вольер больше не помещаются животные");
-            return;
+    public void addAnimal(Animal animal) {
+        if (animal instanceof Carnivorous) {
+            if (counter >= size) {
+                System.out.println("В вольер больше не помещаются животные");
+                return;
+            }
+            counter++;
+            System.out.println("Количество животных в вольере увеличилось, и составляет: " + counter);
+        } else {
+            System.out.println("Вы пытаетесь добавить травоядного в вольер для хищников, не надо так");
         }
-        counter++;
-        System.out.println("Количество животных в вольере увеличилось, и составляет: "+ counter);
     }
 }

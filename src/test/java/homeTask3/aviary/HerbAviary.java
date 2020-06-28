@@ -3,10 +3,13 @@ package homeTask3.aviary;
 import homeTask3.Animal;
 import homeTask3.herbivore.Herbivore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HerbAviary extends Aviary {
 
     private int size = 0;
-    private int counter = 0;
+    private List<Herbivore> herbivoreList = new ArrayList<>();
 
     public HerbAviary(int size) {
             this.size = size;
@@ -14,12 +17,16 @@ public class HerbAviary extends Aviary {
     }
 
 
-    public void addAnimal(Herbivore herbivore) {
-        if (counter >= size) {
-            System.out.println("В вольер больше не помещаются животные");
-            return;
+    public void addAnimal(Animal animal) {
+        if (animal instanceof Herbivore) {
+            if (herbivoreList.size() >= size) {
+                System.out.println("В вольер больше не помещаются животные");
+                return;
+            }
+            herbivoreList.add((Herbivore) animal);
+            System.out.println("Количество животных в вольере увеличилось, и составляет: " + herbivoreList.size());
+        } else {
+            System.out.println("Вы пытаетесь добавить хищника в вольер для травоядных, не надо так");
         }
-        counter++;
-        System.out.println("Количество животных в вольере увеличилось, и составляет: " + counter);
     }
 }

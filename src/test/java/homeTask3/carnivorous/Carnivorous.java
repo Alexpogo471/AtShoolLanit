@@ -6,8 +6,4 @@ import homeTask3.food.Meat;
 
 public abstract class Carnivorous extends Animal {
 
-    @Override
-    public void eat(Food food) {
-
-    }
 }
