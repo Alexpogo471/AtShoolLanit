@@ -1,6 +1,6 @@
 package homeTask3.food;
 
-public interface Food {
+public abstract class Food {
 
-    void eat();
+
 }
