@@ -15,7 +15,7 @@ public class Giraffe extends Herbivore {
     public void eat(Food food) {
         if (food instanceof Plants){
             satiety++;
-            System.out.println("Кормим жирафа, сытость теперь "+satiety);
+            System.out.println("Кормим жирафа, сытость теперь: "+satiety);
         } else {
             System.out.println("Травоядных нельзя кормить мясом");
         }

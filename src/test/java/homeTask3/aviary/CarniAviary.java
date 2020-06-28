@@ -2,7 +2,6 @@ package homeTask3.aviary;
 
 import homeTask3.Animal;
 import homeTask3.carnivorous.Carnivorous;
-import homeTask3.herbivore.Herbivore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +19,7 @@ public class CarniAviary extends Aviary {
     }
 
 
+    @Override
     public void addAnimal(Animal animal) {
         if (animal instanceof Carnivorous) {
             if (carnivorousList.size() >= size) {

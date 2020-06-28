@@ -15,7 +15,7 @@ public class Tiger extends Carnivorous {
     public void eat(Food food) {
         if (food instanceof Meat) {
             satiety++;
-            System.out.println("Кормим тигра, сытость теперь " + satiety);
+            System.out.println("Кормим тигра, сытость теперь: " + satiety);
         } else {
             System.out.println("Хищников нельзя кормить растениями");
         }

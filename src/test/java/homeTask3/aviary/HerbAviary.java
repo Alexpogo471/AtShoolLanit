@@ -19,6 +19,7 @@ public class HerbAviary extends Aviary {
     }
 
 
+    @Override
     public void addAnimal(Animal animal) {
         if (animal instanceof Herbivore) {
             if (herbivoreList.size() >= size) {

@@ -14,7 +14,7 @@ public class Duck extends Herbivore{
     public void eat(Food food) {
         if (food instanceof Plants){
             satiety++;
-            System.out.println("Кормим утки, сытость теперь "+satiety);
+            System.out.println("Кормим утки, сытость теперь: "+satiety);
         } else {
             System.out.println("Травоядных нельзя кормить мясом");
         }
