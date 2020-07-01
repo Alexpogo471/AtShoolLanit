@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AtShoolLanit" />
         <module name="Java1" />
+        <module name="AtShoolLanit" />
       </profile>
     </annotationProcessing>
   </component>

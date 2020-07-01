@@ -1,5 +1,6 @@
 package homeTask3.herbivore;
 
+import homeTask3.FoodException;
 import homeTask3.food.Food;
 import homeTask3.food.Plants;
 
@@ -12,12 +13,12 @@ public class Giraffe extends Herbivore {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws FoodException {
         if (food instanceof Plants){
             satiety++;
             System.out.println("Кормим жирафа, сытость теперь: "+satiety);
         } else {
-            System.out.println("Травоядных нельзя кормить мясом");
+            throw new FoodException("Травоядных нельзя кормить мясом");
         }
 
     }

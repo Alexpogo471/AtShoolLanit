@@ -1,5 +1,6 @@
 package homeTask3.carnivorous;
 
+import homeTask3.FoodException;
 import homeTask3.food.Food;
 import homeTask3.food.Meat;
 
@@ -12,12 +13,12 @@ public class Lion extends Carnivorous {
     }
 
     @Override
-    public void eat(Food food) {
+    public void eat(Food food) throws FoodException {
         if (food instanceof Meat) {
             satiety++;
             System.out.println("Кормим льва, сытость теперь: " + satiety);
         } else {
-            System.out.println("Хищников нельзя кормить растениями");
+            throw new FoodException("Хищников нельзя кормить растениями");
         }
     }
 }

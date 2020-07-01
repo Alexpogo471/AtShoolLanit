@@ -28,6 +28,11 @@ public class MainHomeTask3 {
         lemur.eat(plants);
         lemur.eat(meat);
         lemur.eat(meat);
+        try {
+            lion.eat(plants);
+        } catch (FoodException e) {
+            e.printStackTrace();
+        }
         System.out.println("\n--------------------\n");
         Aviary aviary = new HerbAviary(4);
         aviary.addAnimal(new Lion());
