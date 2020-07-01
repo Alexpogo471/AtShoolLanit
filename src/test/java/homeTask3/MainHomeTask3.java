@@ -2,19 +2,16 @@ package homeTask3;
 
 
 import homeTask3.aviary.Aviary;
-import homeTask3.aviary.CarniAviary;
 import homeTask3.aviary.HerbAviary;
 import homeTask3.carnivorous.Lion;
 import homeTask3.carnivorous.Tiger;
 import homeTask3.food.Food;
-import homeTask3.food.Meat;
-import homeTask3.food.Plants;
 import homeTask3.herbivore.Duck;
 import homeTask3.herbivore.Giraffe;
 import homeTask3.herbivore.Lemur;
 
 public class MainHomeTask3 {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         Tiger tiger = new Tiger();
         Lion lion = new Lion();
@@ -22,12 +19,25 @@ public class MainHomeTask3 {
         Lemur lemur = new Lemur();
         Giraffe giraffe = new Giraffe();
 
+        Food meat =  Food.MEAT;
+        Food plants = Food.PLANTS;
         lemur.getSatiety();
-        Food meat = new Meat();
-        Food plants = new Plants();
-        lemur.eat(plants);
-        lemur.eat(meat);
-        lemur.eat(meat);
+        try {
+            lemur.eat(plants);
+        } catch (FoodException e) {
+            e.printStackTrace();
+        }
+        try {
+            lemur.eat(plants);
+        } catch (FoodException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            lemur.eat(meat);
+        } catch (FoodException e) {
+            e.printStackTrace();
+        }
         try {
             lion.eat(plants);
         } catch (FoodException e) {

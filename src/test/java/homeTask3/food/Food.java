@@ -1,6 +1,3 @@
 package homeTask3.food;
 
-public abstract class Food {
-
-
-}
+public enum Food {MEAT, PLANTS}
