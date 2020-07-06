@@ -9,9 +9,15 @@ import homeTask3.food.Food;
 import homeTask3.herbivore.Duck;
 import homeTask3.herbivore.Giraffe;
 import homeTask3.herbivore.Lemur;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class MainHomeTask3 {
+
+    private static final Logger log = LogManager.getLogger();
+
     public static void main(String[] args)  {
+
 
         Tiger tiger = new Tiger();
         Lion lion = new Lion();
@@ -22,27 +28,9 @@ public class MainHomeTask3 {
         Food meat =  Food.MEAT;
         Food plants = Food.PLANTS;
         lemur.getSatiety();
-        try {
-            lemur.eat(plants);
-        } catch (FoodException e) {
-            e.printStackTrace();
-        }
-        try {
-            lemur.eat(plants);
-        } catch (FoodException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            lemur.eat(meat);
-        } catch (FoodException e) {
-            e.printStackTrace();
-        }
-        try {
-            lion.eat(plants);
-        } catch (FoodException e) {
-            e.printStackTrace();
-        }
+        log.info(duck);
+
         System.out.println("\n--------------------\n");
         Aviary aviary = new HerbAviary(4);
         aviary.addAnimal(new Lion());
