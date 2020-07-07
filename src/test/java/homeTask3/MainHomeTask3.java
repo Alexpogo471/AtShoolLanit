@@ -27,7 +27,7 @@ public class MainHomeTask3 {
 
         Gson gson = new Gson();
 
-        System.out.println("Достаем из файла объект duck");
+        log.info("Достаем из файла объект duck");
 
         String duckFromFile = "";
         try {
@@ -46,7 +46,6 @@ public class MainHomeTask3 {
         Duck deserializedDuck = gson.fromJson(duckFromFile,Duck.class);
         System.out.println("Объект из файла: "+ deserializedDuck.getSatiety());
 
-        System.out.println("\n--------------------\n");
 
         Tiger tiger = new Tiger();
         Lion lion = new Lion();
@@ -59,13 +58,13 @@ public class MainHomeTask3 {
         lemur.getSatiety();
 
 
-        System.out.println("\n--------------------\n");
+        log.info("\n--------------------\n");
         log.info(duck);
         duck.eat(plants);
         String jsonDuck = gson.toJson(duck);
         log.info("Пишем в лог: "+jsonDuck);
 
-        System.out.println("Пишем в файл объект duck с полем: "+ duck.getSatiety());
+        log.info("Пишем в файл объект duck с полем: "+ duck.getSatiety());
         try {
             FileWriter writer = new FileWriter("note.txt",false);
             writer.write(jsonDuck);
