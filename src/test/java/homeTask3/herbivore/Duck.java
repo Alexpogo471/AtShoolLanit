@@ -6,8 +6,8 @@ import homeTask3.food.Food;
 public class Duck extends Herbivore {
     private int satiety = (int) ((Math.random() * 5) + 1);
 
-    public void getSatiety() {
-        System.out.println("Сытость утки: " + satiety);
+    public String getSatiety() {
+        return "Сытость утки: " + satiety;
     }
 
     @Override

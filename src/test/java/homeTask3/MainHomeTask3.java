@@ -12,7 +12,9 @@ import homeTask3.herbivore.Giraffe;
 import homeTask3.herbivore.Lemur;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.util.JsonUtils;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,6 +25,28 @@ public class MainHomeTask3 {
 
     public static void main(String[] args)  {
 
+        Gson gson = new Gson();
+
+        System.out.println("Достаем из файла объект duck");
+
+        String duckFromFile = "";
+        try {
+            FileReader reader = new FileReader("note.txt");
+            StringBuilder fileDuck = new StringBuilder();
+            int c;
+            while ((c=reader.read())!=-1){
+                fileDuck.append((char)c);
+            }
+            duckFromFile = fileDuck.toString();
+            System.out.println("Утка из файла: "+duckFromFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Duck deserializedDuck = gson.fromJson(duckFromFile,Duck.class);
+        System.out.println("Объект из файла: "+ deserializedDuck.getSatiety());
+
+        System.out.println("\n--------------------\n");
 
         Tiger tiger = new Tiger();
         Lion lion = new Lion();
@@ -34,12 +58,25 @@ public class MainHomeTask3 {
         Food plants = Food.PLANTS;
         lemur.getSatiety();
 
-        log.info(duck);
 
+        System.out.println("\n--------------------\n");
+        log.info(duck);
         duck.eat(plants);
-        Gson gson = new Gson();
-        String s = gson.toJson(duck);
-        log.info(s);
+        String jsonDuck = gson.toJson(duck);
+        log.info("Пишем в лог: "+jsonDuck);
+
+        System.out.println("Пишем в файл объект duck с полем: "+ duck.getSatiety());
+        try {
+            FileWriter writer = new FileWriter("note.txt",false);
+            writer.write(jsonDuck);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
 
 
         System.out.println("\n--------------------\n");
