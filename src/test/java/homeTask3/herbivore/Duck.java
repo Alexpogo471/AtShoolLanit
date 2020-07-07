@@ -11,12 +11,12 @@ public class Duck extends Herbivore {
     }
 
     @Override
-    public void eat(Food food) throws FoodException {
+    public void eat(Food food)  {
         if (food == Food.PLANTS) {
             satiety++;
             System.out.println("Кормим утки, сытость теперь: " + satiety);
         } else {
-            throw new FoodException("Травоядных нельзя кормить мясом");
+            System.out.println("Травоядных нельзя кормить мясом");
         }
 
     }

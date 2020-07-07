@@ -1,6 +1,7 @@
 package homeTask3;
 
 
+import com.google.gson.Gson;
 import homeTask3.aviary.Aviary;
 import homeTask3.aviary.HerbAviary;
 import homeTask3.carnivorous.Lion;
@@ -11,6 +12,10 @@ import homeTask3.herbivore.Giraffe;
 import homeTask3.herbivore.Lemur;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class MainHomeTask3 {
 
@@ -30,6 +35,12 @@ public class MainHomeTask3 {
         lemur.getSatiety();
 
         log.info(duck);
+
+        duck.eat(plants);
+        Gson gson = new Gson();
+        String s = gson.toJson(duck);
+        log.info(s);
+
 
         System.out.println("\n--------------------\n");
         Aviary aviary = new HerbAviary(4);
